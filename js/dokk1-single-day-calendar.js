@@ -47,7 +47,8 @@ if (!window.slideFunctions['calendar-single-day-dokk1']) {
 
       var duration = slide.duration !== null ? slide.duration : 15;
 
-      var bookedRegex = /\(optaget\)/i;
+      var listRegEx = new RegExp("(\\(liste\\))", "ig");
+      var optagetRegEx = new RegExp("(\\(optaget\\))", "ig");
 
       if (slide.external_data) {
         var now = new Date();
@@ -73,11 +74,11 @@ if (!window.slideFunctions['calendar-single-day-dokk1']) {
 
             // Apply event_name filters if it exists.
             if (booking.event_name !== null && typeof booking.event_name !== 'undefined') {
-              // Remove all (liste) from the event_name
-              booking.event_name = booking.event_name.split('(liste)').join('');
+              // Remove all (list) from the event_name
+              booking.event_name = booking.event_name.replace(listRegEx, '');
 
               // Replace the event_name with Optaget if it contains the (optaget)
-              if (bookedRegex.test(booking.event_name)) {
+              if (booking.event_name.match(optagetRegEx)) {
                 booking.event_name = 'Optaget';
               }
             }
