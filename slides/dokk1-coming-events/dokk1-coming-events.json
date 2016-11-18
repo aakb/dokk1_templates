@@ -1,7 +1,7 @@
 {
   "id": "dokk1-coming-events",
   "type": "slide",
-  "name": "Dokk1 - Kommende begivender",
+  "name": "Dokk1 - Kommende begivenheder",
   "icon": "dokk1-coming-events.png",
   "paths": {
     "live": "dokk1-coming-events-live.html",
