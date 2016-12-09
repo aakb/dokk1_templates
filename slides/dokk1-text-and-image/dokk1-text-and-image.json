@@ -1,0 +1,34 @@
+{
+  "id": "dokk1-text-and-image",
+  "type": "slide",
+  "name": "Dokk1 - Tekst og billede",
+  "icon": "dokk1-text-and-image.png",
+  "paths": {
+    "live": "dokk1-text-and-image-live.html",
+    "edit": "dokk1-text-and-image-edit.html",
+    "preview": "dokk1-text-and-image-preview.html",
+    "css": "dokk1-text-and-image.css",
+    "js": "../../../js/baseSlide.js"
+  },
+  "orientation": "landscape",
+  "slide_type": "base",
+  "media_type": "image",
+  "script_id": "base",
+  "ideal_dimensions": {
+    "width": "1920",
+    "height": "1080"
+  },
+  "empty_options": {
+    "fontsize": "60",
+    "bgcolor": "rgb(188, 188, 188)",
+    "headline": "",
+    "text": "",
+    "responsive_fontsize": "3"
+  },
+  "tools": [
+    {
+      "name": "Baggrund",
+      "id": "background-editor-static-colors"
+    }
+  ]
+}
