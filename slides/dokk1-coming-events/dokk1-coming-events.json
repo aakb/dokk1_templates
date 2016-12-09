@@ -22,7 +22,8 @@
     "bgcolor": "rgb(0, 55, 100)",
     "headline": "",
     "footer_text": "Se mere på dokk1.dk/events",
-    "resources": []
+    "resources": [],
+    "interest_interval": 7
   },
   "tools": [
     {
