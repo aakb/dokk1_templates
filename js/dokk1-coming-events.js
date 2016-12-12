@@ -32,6 +32,9 @@ if (!window.slideFunctions['dokk1-coming-events']) {
 
       var duration = slide.duration !== null ? slide.duration : 15;
 
+      var listRegEx = new RegExp("(\\(liste\\))", "ig");
+      var optagetRegEx = new RegExp("(\\(optaget\\))", "ig");
+
       slide.eventDays = {};
 
       slide.external_data.forEach(function (el) {
@@ -43,16 +46,16 @@ if (!window.slideFunctions['dokk1-coming-events']) {
 
         // Apply event_name filters if it exists.
         if (booking.event_name !== null && typeof booking.event_name !== 'undefined') {
-          // Exclude all events where the event_name does not include (list) in the string
-          if (booking.event_name.indexOf('(liste)') === -1) {
+          // Exclude all events where the event_name does not include (liste) in the string
+          if (booking.event_name.toLowerCase().indexOf('(liste)') === -1) {
             return;
           }
 
           // Remove all (list) from the event_name
-          booking.event_name = booking.event_name.split('(liste)').join('');
+          booking.event_name = booking.event_name.replace(listRegEx, '');
 
           // Replace the event_name with Optaget if it contains the (optaget)
-          if (/\(optaget\)/g.test(booking.event_name)) {
+          if (booking.event_name.match(optagetRegEx)) {
             booking.event_name = 'Optaget';
           }
         }
